@@ -1,0 +1,40 @@
+<Project>
+  <PropertyGroup>
+    <UnoVersion>4.9.0-dev.439</UnoVersion>
+    <SkiaSharpVersion>2.88.3</SkiaSharpVersion>
+    <MicrosoftWindowsSDKNETRefVersion>10.0.22621.28</MicrosoftWindowsSDKNETRefVersion>
+    <UnoWasmBootstrapVersion>7.0.19</UnoWasmBootstrapVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Update="Uno.WinUI" Version="$(UnoVersion)" />
+    <PackageReference Update="Uno.WinUI.RemoteControl" Version="$(UnoVersion)" />
+    <PackageReference Update="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="$(UnoVersion)" />
+    <PackageReference Update="Uno.WinUI.Lottie" Version="$(UnoVersion)" />
+    <PackageReference Update="Uno.WinUI.Skia.Gtk" Version="$(UnoVersion)" />
+    <PackageReference Update="Uno.WinUI.Skia.Linux.FrameBuffer" Version="$(UnoVersion)" />
+    <PackageReference Update="Uno.WinUI.Skia.Wpf" Version="$(UnoVersion)" />
+    <PackageReference Update="Uno.WinUI.WebAssembly" Version="$(UnoVersion)" />
+    <PackageReference Update="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
+    <PackageReference Update="Uno.Core.Extensions.Logging.Singleton" Version="4.0.1" />
+    <PackageReference Update="Uno.Toolkit.WinUI.Material" Version="2.6.0-dev.15" />
+    <PackageReference Update="Uno.Fonts.Fluent" Version="2.2.0-dev.7" />
+    <PackageReference Update="SkiaSharp.Views.Uno.WinUI" Version="$(SkiaSharpVersion)" />
+    <PackageReference Update="SkiaSharp.Skottie" Version="$(SkiaSharpVersion)" />
+    <PackageReference Update="Microsoft.WindowsAppSDK" Version="1.2.221109.1" />
+    <PackageReference Update="Xamarin.Google.Android.Material" Version="1.4.0.4" />
+    <PackageReference Update="Uno.UniversalImageLoader" Version="1.9.36" />
+    <PackageReference Update="Uno.Extensions.Logging.OSLog" Version="1.4.0" />
+    <PackageReference Update="Uno.Wasm.Bootstrap.Server" Version="$(UnoWasmBootstrapVersion)" />
+    <PackageReference Update="Uno.Wasm.Bootstrap" Version="$(UnoWasmBootstrapVersion)" />
+    <PackageReference Update="Uno.Wasm.Bootstrap.DevServer" Version="$(UnoWasmBootstrapVersion)" />
+    <PackageReference Update="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Update="Microsoft.Windows.Compatibility" Version="6.0.0" />
+    <PackageReference Update="Uno.Extensions.Logging.WebAssembly.Console" Version="1.4.0" />
+    <PackageReference Update="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="$(MicrosoftWindowsSDKNETRefVersion)" />
+    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="$(MicrosoftWindowsSDKNETRefVersion)" />
+  </ItemGroup>
+</Project>

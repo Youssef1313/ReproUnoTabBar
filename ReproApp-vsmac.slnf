@@ -1,0 +1,16 @@
+{
+  "solution": {
+    "path": "ReproApp.sln",
+    "projects": [
+		"ReproApp\\ReproApp.csproj",
+
+		"ReproApp.Mobile\\ReproApp.Mobile.csproj",
+
+		"ReproApp.Wasm\\ReproApp.Wasm.csproj",
+
+		"ReproApp.Skia.Gtk\\ReproApp.Skia.Gtk.csproj",
+
+		"ReproApp.Skia.Gtk\\ReproApp.Skia.Gtk.csproj",
+    ]
+  }
+}

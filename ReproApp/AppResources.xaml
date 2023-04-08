@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <MaterialToolkitTheme xmlns="using:Uno.Toolkit.UI.Material" ColorOverrideSource="ms-appx:///ReproApp/Styles/MaterialColorsOverride.xaml" />
+        <!--
+            Add resource dictionaries.
+
+            For example:
+            <ResourceDictionary Source="Styles/MyButtonStyles.xaml" />
+        -->
+    </ResourceDictionary.MergedDictionaries>
+    
+    <!-- Add resources here -->
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Default">
+            <FontFamily x:Key="LatoFont">ms-appx:///ReproApp/Assets/Fonts/Lato-Heavy.ttf#Lato</FontFamily>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource LatoFont}"/>
+            </Style>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>

@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "ReproApp.Windows": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

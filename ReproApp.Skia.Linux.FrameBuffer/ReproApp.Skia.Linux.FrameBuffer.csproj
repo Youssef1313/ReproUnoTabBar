@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType Condition="'$(Configuration)'=='Release'">WinExe</OutputType>
+    <OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup Condition="exists('..\ReproApp.Windows')">
+    <EmbeddedResource Include="..\ReproApp.Windows\Package.appxmanifest" LogicalName="Package.appxmanifest" />
+    <Content Include="..\ReproApp.Windows\Images\StoreLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Uno.WinUI.Skia.Linux.FrameBuffer" />
+    <PackageReference Include="Uno.WinUI.RemoteControl" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
+    <PackageReference Include="Uno.WinUI.Lottie" />
+    <PackageReference Include="SkiaSharp.Views.Uno.WinUI" />
+    <PackageReference Include="SkiaSharp.Skottie" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReproApp\ReproApp.csproj" />
+  </ItemGroup>
+  <Import Project="..\ReproApp.Base\base.props" />
+</Project>
