@@ -1,13 +1,10 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using ReproApp.ViewModels;
-using Uno.Toolkit.UI;
 using Windows.Media.Capture;
 using Windows.Storage;
-using Windows.Storage.Pickers;
 
 namespace ReproApp;
 
@@ -21,22 +18,13 @@ public sealed partial class MainPage : Page
 
     public HomeViewModel VM { get; set; } = new();
 
-    private async void SelectFileButton_Click(object sender, RoutedEventArgs e)
+
+#if __ANDROID__ || __IOS__
+    private async void myRect_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
     {
-        var picker = new FileOpenPicker()
-        {
-            FileTypeFilter =
-            {
-                ".jpg", ".png",
-            },
-        };
+        var captureUI = new CameraCaptureUI();
 
-        // Get the current window's HWND by passing a Window object
-        var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow);
-        // Associate the HWND with the file picker
-        WinRT.Interop.InitializeWithWindow.Initialize(picker, hwnd);
-
-        StorageFile file = await picker.PickSingleFileAsync();
+        var file = await captureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
         await AddStorageFileAsync(file);
     }
 
@@ -51,15 +39,6 @@ public sealed partial class MainPage : Page
             VM.ImagesToScan.Add(new ByteArrayWrapper(bytes));
             VM.SelectedIndex = VM.ImagesToScan.Count - 1;
         }
-    }
-
-#if __ANDROID__ || __IOS__
-    private async void CaptureFromCameraButton_Click(object sender, RoutedEventArgs e)
-    {
-        var captureUI = new CameraCaptureUI();
-
-        var file = await captureUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
-        await AddStorageFileAsync(file);
     }
 #endif
 }

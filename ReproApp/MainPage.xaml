@@ -11,38 +11,14 @@
     mc:Ignorable="d android ios"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid x:Name="myGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <ContentControl Grid.Row="0" x:Name="content" Content="{x:Bind VM.ActivePage, Mode=OneWay}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" />
-        <utu:TabBar SelectedIndex="0" Grid.Row="1" Background="Blue">
-            <utu:TabBar.Items>
-                <utu:TabBarItem Style="{StaticResource BottomFabTabBarItemStyle}">
-                    <utu:TabBarItem.Flyout>
-                        <MenuFlyout MenuFlyoutPresenterStyle="{StaticResource MenuFlyoutPresenterStyle}" Placement="Top">
-                            <android:MenuFlyoutItem Style="{StaticResource MaterialMenuFlyoutItemStyle}" Click="CaptureFromCameraButton_Click" Text="Capture from camera">
-                                <MenuFlyoutItem.Icon>
-                                    <SymbolIcon Symbol="Camera" />
-                                </MenuFlyoutItem.Icon>
-                            </android:MenuFlyoutItem>
-                            <MenuFlyoutItem Style="{StaticResource MaterialMenuFlyoutItemStyle}" Click="SelectFileButton_Click" Text="Open from file">
-                                <MenuFlyoutItem.Icon>
-                                    <SymbolIcon Symbol="OpenFile" />
-                                </MenuFlyoutItem.Icon>
-                            </MenuFlyoutItem>
 
-                        </MenuFlyout>
-                    </utu:TabBarItem.Flyout>
-
-                    <utu:TabBarItem.Icon>
-                        <SymbolIcon Symbol="Add" />
-                    </utu:TabBarItem.Icon>
-                </utu:TabBarItem>
-            </utu:TabBar.Items>
-        </utu:TabBar>
-
+        <Rectangle Height="64" Grid.Row="1" Fill="Blue" x:Name="myRect" android:Tapped="myRect_Tapped" ios:Tapped="myRect_Tapped"/>
     </Grid>
 
 </Page>
